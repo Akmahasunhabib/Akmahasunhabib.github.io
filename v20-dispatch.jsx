@@ -167,7 +167,7 @@ function V20Portfolio({ theme = {} }) {
   );
 
   const Chip = ({ children }) => (
-    <span style={{ fontFamily: t.fontBody, fontSize: 14.5, color: t.ink, background: t.chipBg, border: `1px solid ${t.rule}`, borderRadius: 3, padding: '6px 11px' }}>{children}</span>
+    <span style={{ fontFamily: t.fontBody, fontSize: 14.5, color: t.ink, background: t.chipBg, border: `1px solid ${t.rule}`, borderRadius: 3, padding: '4px 10px' }}>{children}</span>
   );
 
   const Card = ({ children, style }) => (
@@ -175,24 +175,24 @@ function V20Portfolio({ theme = {} }) {
   );
 
   const Row = ({ left, title, org, children }) => (
-    <div style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: 22, padding: '15px 0', borderTop: `1px solid ${t.rule}` }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: 22, padding: '10px 0', borderTop: `1px solid ${t.rule}` }}>
       <div style={{ fontFamily: t.fontBody, fontSize: 14, color: t.accent, fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', paddingTop: 3 }}>{left}</div>
       <div>
-        <div style={{ fontFamily: t.fontDisplay, fontSize: 21, fontWeight: 600, color: t.ink, marginBottom: org ? 3 : 8 }}>{title}</div>
-        {org ? <div style={{ fontFamily: t.fontBody, fontSize: 15.5, color: t.muted, marginBottom: 9 }}>{org}</div> : null}
+        <div style={{ fontFamily: t.fontDisplay, fontSize: 19.5, fontWeight: 600, color: t.ink, lineHeight: 1.3, marginBottom: org ? 2 : 4 }}>{title}</div>
+        {org ? <div style={{ fontFamily: t.fontBody, fontSize: 15.5, color: t.muted, marginBottom: 4 }}>{org}</div> : null}
         {children}
       </div>
     </div>
   );
 
   const Detail = ({ children }) => (
-    <div style={{ fontFamily: t.fontBody, fontSize: 16, lineHeight: 1.55, color: t.ink, textWrap: 'pretty' }}>{children}</div>
+    <div style={{ fontFamily: t.fontBody, fontSize: 16, lineHeight: 1.5, color: t.ink, textWrap: 'pretty' }}>{children}</div>
   );
 
   const Figure = ({ id, height, placeholder, caption, src }) => {
     if (!src && window.HIDE_EMPTY_FIGURES) return null;
     return (
-      <figure style={{ margin: '28px 0 0' }}>
+      <figure style={{ margin: '18px 0 0' }}>
         {src
           ? <img src={src} alt={caption || ''} style={{ display: 'block', width: '100%', height: height, objectFit: 'cover', border: `1px solid ${t.rule}` }} />
           : <image-slot id={id} placeholder={placeholder} style={{ display: 'block', width: '100%', height: height, border: `1px solid ${t.rule}` }}></image-slot>}
@@ -215,11 +215,11 @@ function V20Portfolio({ theme = {} }) {
           </div>
         </Card>
 
-        <div style={{ height: 34 }}></div>
+        <div style={{ height: 26 }}></div>
         <H>Recent News</H>
         <div>
           {(onePage ? news.slice(0, 4) : (showAllNews ? news : news.slice(0, 6))).map((n, i) => (
-            <div key={i} style={{ display: 'grid', gridTemplateColumns: '110px 1fr', gap: 20, padding: '16px 0', borderTop: `1px solid ${t.rule}` }}>
+            <div key={i} style={{ display: 'grid', gridTemplateColumns: '110px 1fr', gap: 20, padding: '10px 0', borderTop: `1px solid ${t.rule}` }}>
               <div style={{ fontFamily: t.fontBody, fontSize: 15, color: t.muted, paddingTop: 2 }}>{n.date}</div>
               <div>
                 <span style={{ fontFamily: t.fontBody, fontSize: 11.5, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: t.accentInk, background: t.accent, padding: '3px 7px', marginRight: 9 }}>{n.kind}</span>
@@ -249,22 +249,22 @@ function V20Portfolio({ theme = {} }) {
         <H sub={P.tagline}>About Me</H>
         {(onePage ? P.longBio.slice(1) : P.longBio).map((para, i) => <Para key={i}>{para}</Para>)}
         <Figure id="dsp-lab-group" height={340} placeholder="Lab group photo — drag an image here" caption="M3D Lab, Texas Tech University" src="assets/lab-group.png" />
-        <div style={{ height: 36 }}></div>
+        <div style={{ height: 26 }}></div>
         <SubH>Education</SubH>
         {P.education.map((e, i) => (
           <Row key={i} left={e.years} title={e.degree} org={e.school}><Detail>{e.detail}</Detail></Row>
         ))}
-        <div style={{ height: 40 }}></div>
+        <div style={{ height: 28 }}></div>
         <SubH>Experience</SubH>
         {P.experience.map((e, i) => (
           <Row key={i} left={e.years} title={e.role} org={e.org}><Detail>{e.detail}</Detail></Row>
         ))}
-        <div style={{ height: 40 }}></div>
+        <div style={{ height: 28 }}></div>
         <SubH>Technical Skills</SubH>
-        <div style={{ display: 'grid', gap: 14 }}>
+        <div style={{ display: 'grid', gap: 10 }}>
           {Object.entries(P.skills).map(([group, items]) => (
             <div key={group}>
-              <div style={{ fontFamily: t.fontBody, fontSize: 13.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: t.accent, marginBottom: 8 }}>{group}</div>
+              <div style={{ fontFamily: t.fontBody, fontSize: 13.5, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: t.accent, marginBottom: 6 }}>{group}</div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>{items.map(s => <Chip key={s}>{s}</Chip>)}</div>
             </div>
           ))}
@@ -274,7 +274,7 @@ function V20Portfolio({ theme = {} }) {
     research: (
       <React.Fragment>
         <H sub="Selected projects in architected materials, additive manufacturing, and machine learning for materials design.">Research</H>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 9, marginBottom: 26 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, marginBottom: 20 }}>
           {P.interests.map(i => <Chip key={i}>{i}</Chip>)}
         </div>        <style>{`
           @keyframes dspRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
@@ -291,7 +291,7 @@ function V20Portfolio({ theme = {} }) {
           @container (max-width:700px){.dsp-media{height:240px !important}}
           @media (prefers-reduced-motion:reduce){.dsp-proj{animation:none}.dsp-media img,.dsp-media video{transition:none}}
         `}</style>
-        <div className="dsp-wrap" style={{ display: 'grid', gap: 22, '--dsp-rule': t.rule }}>
+        <div className="dsp-wrap" style={{ display: 'grid', gap: 18, '--dsp-rule': t.rule }}>
           {P.projects.map((p, i) => {
             const isVideo = p.media && /\.(mp4|webm|mov)$/i.test(p.media);
             const showMedia = p.media || p.viz || !window.HIDE_EMPTY_FIGURES;
@@ -325,14 +325,14 @@ function V20Portfolio({ theme = {} }) {
                     ))}
                   </div>
                 ) : null}
-                <div style={{ padding: '20px 26px 24px', minWidth: 0 }}>
+                <div style={{ padding: '16px 24px 18px', minWidth: 0 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'baseline', marginBottom: 7 }}>
                     <div style={{ fontFamily: t.fontBody, fontSize: 12.5, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: t.accent }}>{p.tag}</div>
                     <div style={{ fontFamily: t.fontBody, fontSize: 14.5, color: t.muted, whiteSpace: 'nowrap' }}>{p.year}</div>
                   </div>
                   <div style={{ fontFamily: t.fontDisplay, fontSize: 22, fontWeight: 600, color: t.ink, marginBottom: 8, lineHeight: 1.25, textWrap: 'pretty' }}>{p.title}</div>
                   <Detail>{p.blurb}</Detail>
-                  {p.doi ? <a href={`https://doi.org/${p.doi}`} target="_blank" style={{ display: 'inline-flex', gap: 7, alignItems: 'center', marginTop: 14, fontFamily: t.fontBody, fontSize: 14.5, fontWeight: 600, color: t.accent, textDecoration: 'none' }}><i className="fa-solid fa-file-lines"></i>Read the paper</a> : null}
+                  {p.doi ? <a href={`https://doi.org/${p.doi}`} target="_blank" style={{ display: 'inline-flex', gap: 7, alignItems: 'center', marginTop: 10, fontFamily: t.fontBody, fontSize: 14.5, fontWeight: 600, color: t.accent, textDecoration: 'none' }}><i className="fa-solid fa-file-lines"></i>Read the paper</a> : null}
                 </div>
               </div>
             );
@@ -346,16 +346,22 @@ function V20Portfolio({ theme = {} }) {
         {Object.entries(P.publications.reduce((acc, p) => { (acc[p.year] = acc[p.year] || []).push(p); return acc; }, {}))
           .sort((a, b) => b[0].localeCompare(a[0]))
           .map(([year, items]) => (
-            <div key={year} style={{ marginBottom: 24 }}>
-              <div style={{ fontFamily: t.fontDisplay, fontSize: 26, fontWeight: 600, color: t.accent, marginBottom: 4 }}>{year}</div>
-              {items.map((p, i) => (
-                <div key={i} style={{ padding: '13px 0', borderTop: `1px solid ${t.rule}` }}>
-                  <div style={{ fontFamily: t.fontBody, fontSize: 15.5, color: t.muted, marginBottom: 5 }}>{p.authors}</div>
-                  <div style={{ fontFamily: t.fontDisplay, fontSize: 19.5, fontWeight: 600, color: t.ink, lineHeight: 1.35, marginBottom: 6, textWrap: 'pretty' }}>{p.title}</div>
-                  <div style={{ fontFamily: t.fontBody, fontSize: 15.5, color: t.ink, fontStyle: 'italic' }}>{p.venue}</div>
-                  <span style={{ display: 'inline-block', marginTop: 9, fontFamily: t.fontBody, fontSize: 11.5, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: t.accent, border: `1px solid ${t.accent}`, padding: '2px 7px' }}>{p.status}</span>
-                </div>
-              ))}
+            <div key={year} style={{ marginBottom: 22 }}>
+              <div style={{ fontFamily: t.fontDisplay, fontSize: 26, fontWeight: 700, color: t.ink, marginBottom: 8 }}>{year}</div>
+              <ul style={{ margin: 0, paddingLeft: 22, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {items.map((p, i) => {
+                  const me = 'Habib, A. K. M. A.';
+                  const [pre, post] = p.authors.includes(me) ? p.authors.split(me) : [p.authors, null];
+                  const dm = p.venue.match(/^(.*?)\.?\s*DOI:\s*(\S+)$/);
+                  const src = dm ? dm[1] : p.venue, doi = dm ? dm[2].replace(/\.$/, '') : null;
+                  const ci = src.indexOf(','), jn = ci > -1 ? src.slice(0, ci) : src, rest = ci > -1 ? src.slice(ci) : '';
+                  return (
+                    <li key={i} style={{ fontFamily: t.fontBody, fontSize: 16.5, color: t.ink, lineHeight: 1.55, textWrap: 'pretty' }}>
+                      {post === null ? pre : <React.Fragment>{pre}<b>{me}</b>{post}</React.Fragment>}{' '}“{p.title.replace(/\.$/, '')}”, <i>{jn}</i>{rest}.{doi && <React.Fragment> DOI: <a href={`https://doi.org/${doi}`} target="_blank" style={{ color: t.accent, textDecoration: 'underline', wordBreak: 'break-word' }}>https://doi.org/{doi}</a></React.Fragment>}
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           ))}
         <a href={P.contact.scholar.url} target="_blank" style={{ fontFamily: t.fontBody, fontSize: 16, color: t.accent, fontWeight: 600 }}>View full list on Google Scholar →</a>
@@ -367,7 +373,7 @@ function V20Portfolio({ theme = {} }) {
         {P.experience.filter(e => /instructor|teaching/i.test(e.role)).map((e, i) => (
           <Row key={i} left={e.years} title={e.role} org={e.org}><Detail>{e.detail}</Detail></Row>
         ))}
-        <div style={{ height: 40 }}></div>
+        <div style={{ height: 28 }}></div>
         <SubH>Leadership &amp; Outreach</SubH>
         {P.leadership.map((l, i) => (
           <Row key={i} left={l.years} title={l.role} org={l.org} />
@@ -381,7 +387,7 @@ function V20Portfolio({ theme = {} }) {
           <Row key={i} left={a.year} title={a.title}>
             <Detail>{a.body}</Detail>
             {a.images ? (
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 18, marginTop: 12 }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 18, marginTop: 6 }}>
                 {a.images.map((im, k) => (
                   <button key={k} type="button" onClick={() => setLightbox({ src: im.src, caption: a.title + (im.caption ? ' — ' + im.caption : '') })} className="dsp-certlink" title={im.caption || ''}>
                     <i className="fa-solid fa-award"></i>View certificate{im.label ? ' (' + im.label + ')' : ''}
@@ -390,7 +396,7 @@ function V20Portfolio({ theme = {} }) {
               </div>
             ) : null}
             {a.image || a.pdf ? (
-              <div style={{ marginTop: 12 }}>
+              <div style={{ marginTop: 6 }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 18, alignItems: 'center' }}>
                   {a.image ? <button type="button" onClick={() => setLightbox({ src: a.image, caption: a.title })} className="dsp-certlink"><i className="fa-solid fa-award"></i>View certificate</button> : null}
                   {a.pdf ? <a href={a.pdf} target="_blank" style={{ display: 'inline-flex', gap: 8, alignItems: 'center', fontFamily: t.fontBody, fontSize: 14.5, fontWeight: 600, color: t.accent, textDecoration: 'none' }}><i className="fa-solid fa-file-pdf"></i>Award letter (PDF)</a> : null}
@@ -401,7 +407,7 @@ function V20Portfolio({ theme = {} }) {
         ))}
         {P.certificates && P.certificates.length ? (
           <React.Fragment>
-            <div style={{ height: 40 }}></div>
+            <div style={{ height: 28 }}></div>
             <SubH>Certifications</SubH>
             <div>
               {P.certificates.map((c, i) => (
@@ -429,7 +435,7 @@ function V20Portfolio({ theme = {} }) {
           .dsp-ct{container-type:inline-size}
           .dsp-ct-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px}
           @container (max-width:640px){.dsp-ct-grid{grid-template-columns:1fr}}
-          .dsp-ct-row{display:flex;gap:14px;align-items:center;padding:13px 0;border-top:1px solid ${t.rule};text-decoration:none}
+          .dsp-ct-row{display:flex;gap:14px;align-items:center;padding:9px 0;border-top:1px solid ${t.rule};text-decoration:none}
           .dsp-ct-row:first-of-type{border-top:none}
           .dsp-ct-row:hover .dsp-ct-lbl{text-decoration:underline}
         `}</style>
@@ -486,7 +492,7 @@ function V20Portfolio({ theme = {} }) {
         .dsp-scroll::-webkit-scrollbar{width:10px}
         .dsp-scroll::-webkit-scrollbar-thumb{background:${t.rule}}
         .dsp-sec{scroll-margin-top:20px}
-        .dsp-sec+.dsp-sec{margin-top:58px}
+        .dsp-sec+.dsp-sec{margin-top:44px}
         .dsp-open{display:flex;align-items:stretch;margin-bottom:22px;border:1px solid ${t.rule};border-left:6px solid ${t.accent};background:${t.panel}}
         .dsp-open-t{flex:1;min-width:0;padding:18px 26px;display:flex;align-items:center}
         .dsp-open-h{font-family:${t.fontDisplay};font-size:42px;font-weight:600;line-height:1.05;letter-spacing:-0.02em;color:${t.ink}}
@@ -498,7 +504,7 @@ function V20Portfolio({ theme = {} }) {
         .dsp-prog{height:3px;background:${t.accent};width:0;transition:width .12s linear}
         .dsp-certlink{display:inline-flex;gap:9px;align-items:center;font-family:${t.fontBody};font-size:15px;font-weight:600;color:${t.accent};background:none;border:none;padding:0;cursor:pointer;text-align:left}
         .dsp-certlink:hover{text-decoration:underline}
-        .dsp-certrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;align-items:baseline;padding:13px 0}
+        .dsp-certrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 20px;align-items:baseline;padding:9px 0}
         @media (prefers-reduced-motion:reduce){.dsp-rev{opacity:1;transform:none;transition:none}}
       `}</style>
 
