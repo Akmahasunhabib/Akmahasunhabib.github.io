@@ -268,7 +268,7 @@ window.PORTFOLIO = {
   // fa = Font Awesome 6 brand/solid class; icon = text fallback if the icon font
   // fails to load. Colors are the official brand colors.
   socials: [
-    { label: "Website", url: "https://akmahasunhabib.github.io", icon: "WWW", fa: "fa-solid fa-globe", color: "#b94a3b" },
+    { label: "Website", url: "https://akmahasunhabib.me", icon: "WWW", fa: "fa-solid fa-globe", color: "#b94a3b" },
     { label: "ResearchGate", url: "https://www.researchgate.net/profile/A-K-M-Ahasun-Habib-2", icon: "RG", fa: "fa-brands fa-researchgate", color: "#00ccbb" },
     { label: "Google Scholar", url: "https://scholar.google.com/citations?user=DzP9DoIAAAAJ&hl=en", icon: "GS", fa: "fa-brands fa-google-scholar", color: "#4285f4" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/a-k-m-ahasun-habib-2868a3151/", icon: "in", fa: "fa-brands fa-linkedin-in", color: "#0a66c2" },
@@ -277,7 +277,7 @@ window.PORTFOLIO = {
     { label: "akhabib@ttu.edu", url: "mailto:akhabib@ttu.edu", icon: "@", fa: "fa-solid fa-envelope", color: "#c0392b" }
   ],
   contact: {
-    website: { label: "akmahasunhabib.github.io", url: "https://akmahasunhabib.github.io", icon: "🌐", fa: "fa-solid fa-globe" },
+    website: { label: "akmahasunhabib.me", url: "https://akmahasunhabib.me", icon: "🌐", fa: "fa-solid fa-globe" },
     email: { label: "akhabib@ttu.edu", url: "mailto:akhabib@ttu.edu", icon: "✉", fa: "fa-solid fa-envelope" },
     phone: { label: "(806) 730-8466", url: "tel:+18067308466", icon: "☎", fa: "fa-solid fa-phone" },
     address: { label: "2717 3rd St #1007, Lubbock, TX 79415", url: "https://www.google.com/maps/place/2717+3rd+St,+Lubbock,+TX", icon: "🏠", fa: "fa-solid fa-house" },
