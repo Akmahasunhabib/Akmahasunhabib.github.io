@@ -101,9 +101,9 @@ window.PORTFOLIO = {
     {
       title: "Heterogeneous Architected Materials Optimization",
       viz: "hetero",
-      media: "assets/fig-hetero-lattice.png",
+      media: "assets/fig-hetero-lattice-trim.png",
       figures: [
-        { src: "assets/fig-hetero-lattice.png", caption: "Heterogeneous lattice combining Cube and Body-Centered unit cells." },
+        { src: "assets/fig-hetero-lattice-trim.png", caption: "Heterogeneous lattice combining Cube and Body-Centered unit cells." },
         { src: "assets/fig-hetero-prints.png", caption: "Homogeneous and heterogeneous lattices as CAD models and 3D-printed specimens." }
       ],
       doi: "10.1007/s00366-024-02081-0",
@@ -129,9 +129,9 @@ window.PORTFOLIO = {
     {
       title: "Influence of Physical Parameters on the Free Vibration Response of a Cantilever Beam",
       viz: "beam",
-      media: "assets/fig-beam-setup.png",
+      media: "assets/fig-beam-setup-trim.png",
       figures: [
-        { src: "assets/fig-beam-setup.png", caption: "Experimental configuration: an Aluminum 6061 cantilever bar driven by an electrodynamical shaker, with a neodymium lumped mass m at distance d and accelerometers recording input and output response." },
+        { src: "assets/fig-beam-setup-trim.png", caption: "Experimental configuration: an Aluminum 6061 cantilever bar driven by an electrodynamical shaker, with a neodymium lumped mass m at distance d and accelerometers recording input and output response." },
         { src: "assets/fig-beam-schematic.png", caption: "Illustration of the phenomenon and expected output — the magnification factor M = |A₀/Aᵢ| peaks when resonance is reached." },
         { src: "assets/fig-beam-frf.png", caption: "Calibration tests with no mass: |FFT(V)| spectra across five repeated signals, with the first three measured modes marked against the analytical prediction." },
         { src: "assets/fig-beam-massmag.png", caption: "Effect of lumped-mass magnitude at fixed position — spectra for m = 18 g, 36 g and 54 g." },

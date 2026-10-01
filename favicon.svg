@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AH monogram">
+  <rect width="64" height="64" rx="12" fill="#111111"/>
+  <g fill="none" stroke="#f5f5f5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 44 19 17 29 44M12.5 35H25.5"/>
+    <path d="M36 17V44M54 17V44M36 30.5H54"/>
+  </g>
+  <rect x="9" y="50" width="45" height="4" rx="2" fill="#b45309"/>
+</svg>
