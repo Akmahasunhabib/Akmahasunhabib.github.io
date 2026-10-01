@@ -12,7 +12,7 @@ M3D Lab, advised by Prof. Paul F. Egan<br>
   <a href="https://orcid.org/0000-0002-7058-6444"><img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID"></a>
   <a href="https://www.researchgate.net/profile/A-K-M-Ahasun-Habib-2"><img src="https://img.shields.io/badge/ResearchGate-00CCBB?style=for-the-badge&logo=researchgate&logoColor=white" alt="ResearchGate"></a>
   <a href="https://www.linkedin.com/in/a-k-m-ahasun-habib-2868a3151/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="mailto:akhabib@ttu.edu"><img src="https://img.shields.io/badge/akhabib%40ttu.edu-C0392B?style=for-the-badge&logo=maildotru&logoColor=white" alt="Email"></a>
+  <a href="mailto:akhabib@ttu.edu"><img src="https://img.shields.io/badge/akhabib%40ttu.edu-C0392B?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTIwIDRINGMtMS4xIDAtMS45OS45LTEuOTkgMkwyIDE4YzAgMS4xLjkgMiAyIDJoMTZjMS4xIDAgMi0uOSAyLTJWNmMwLTEuMS0uOS0yLTItMnptMCA0bC04IDUtOC01VjZsOCA1IDgtNXYyeiIvPjwvc3ZnPg%3D%3D" alt="Email"></a>
 </p>
 
 ---

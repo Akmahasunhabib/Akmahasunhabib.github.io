@@ -85,7 +85,7 @@ window.PORTFOLIO = {
       year: "2023–Present"
     },
     {
-      title: "3D Food Printing Defect Detection with CNN + Image Analysis",
+      title: "Automated Print Fidelity Assessment for 3D Food Printing",
       viz: "foodprint",
       media: "assets/fig-food-fidelity.png",
       figures: [
@@ -94,16 +94,16 @@ window.PORTFOLIO = {
       ],
       doi: "10.1016/j.afres.2026.102424",
       caption: "Figures from Habib et al., Applied Food Research 2026 (open access, CC BY).",
-      tag: "AI/ML · Additive Manufacturing",
-      blurb: "Developed a machine learning model with CNN and image analysis to detect 3D food printing defects from CAD designs, integrating a GUI for real-time printability prediction and material optimization. Graduate project, Texas Tech University.",
+      tag: "Image Analysis · Additive Manufacturing",
+      blurb: "Developed an automated, training-free image segmentation pipeline to assess print fidelity of mashed potato and pea protein inks across rounded, cubic and overhang designs, validated against manual ImageJ measurements (agreement within ±5%, concordance correlation 0.975–0.995).",
       year: "2025"
     },
     {
       title: "Heterogeneous Architected Materials Optimization",
       viz: "hetero",
-      media: "assets/fig-hetero-lattice.png",
+      media: "assets/fig-hetero-lattice-trim.png",
       figures: [
-        { src: "assets/fig-hetero-lattice.png", caption: "Heterogeneous lattice combining Cube and Body-Centered unit cells." },
+        { src: "assets/fig-hetero-lattice-trim.png", caption: "Heterogeneous lattice combining Cube and Body-Centered unit cells." },
         { src: "assets/fig-hetero-prints.png", caption: "Homogeneous and heterogeneous lattices as CAD models and 3D-printed specimens." }
       ],
       doi: "10.1007/s00366-024-02081-0",
@@ -129,9 +129,9 @@ window.PORTFOLIO = {
     {
       title: "Influence of Physical Parameters on the Free Vibration Response of a Cantilever Beam",
       viz: "beam",
-      media: "assets/fig-beam-setup.png",
+      media: "assets/fig-beam-setup-trim.png",
       figures: [
-        { src: "assets/fig-beam-setup.png", caption: "Experimental configuration: an Aluminum 6061 cantilever bar driven by an electrodynamical shaker, with a neodymium lumped mass m at distance d and accelerometers recording input and output response." },
+        { src: "assets/fig-beam-setup-trim.png", caption: "Experimental configuration: an Aluminum 6061 cantilever bar driven by an electrodynamical shaker, with a neodymium lumped mass m at distance d and accelerometers recording input and output response." },
         { src: "assets/fig-beam-schematic.png", caption: "Illustration of the phenomenon and expected output — the magnification factor M = |A₀/Aᵢ| peaks when resonance is reached." },
         { src: "assets/fig-beam-frf.png", caption: "Calibration tests with no mass: |FFT(V)| spectra across five repeated signals, with the first three measured modes marked against the analytical prediction." },
         { src: "assets/fig-beam-massmag.png", caption: "Effect of lumped-mass magnitude at fixed position — spectra for m = 18 g, 36 g and 54 g." },
@@ -225,9 +225,7 @@ window.PORTFOLIO = {
     }
   ],
   achievements: [
-    { year: "2026", title: "ASME DFMLC Paper of Distinction (A) Award", body: "Awarded by the ASME Design Engineering Division's Design for Manufacturing and the Life Cycle Technical Committee for a Paper of Distinction submitted to the 31st DFMLC Conference. Presented at IDETC-CIE 2026, Houston, TX, August 23–26, 2026. Co-authors: Ranadip Pal, Farnaz Maleky, Martin Binks, Paul Egan.", image: "assets/awards/asme-dfmlc-2026-certificate.jpg", pdf: "assets/awards/asme-dfmlc-2026-paper-of-distinction.pdf" },
-    { year: "2026", title: "First-Author Journal Paper — Designs", body: "Published 'Design Strategies for Mixed Unit Cell Lattices: Mechanical Assessment with Biomedical 3D Printing' in Designs, vol. 10, no. 4." },
-    { year: "2025", title: "First-Author Paper — ICED 2025, Dallas", body: "Presented 'Print Fidelity Assessment for 3D Food Printed Designs Using Manual and Automated Approaches' at the Design Society International Conference on Engineering Design (Cambridge University Press proceedings)." },
+    { year: "2026", title: "ASME DFMLC Paper of Distinction (A) Award", body: "Awarded by the ASME Design Engineering Division's Design for Manufacturing and the Life Cycle Technical Committee for a Paper of Distinction submitted to the 31st DFMLC Conference: 'Comparison of Computational and Human-Sourced Print Fidelity Assessments for 3D Printed Foods' (DETC2026-193788). Presented at IDETC-CIE 2026, Houston, TX, August 23–26, 2026. Co-authors: Ranadip Pal, Farnaz Maleky, Martin Binks, Paul Egan.", image: "assets/awards/asme-dfmlc-2026-certificate.jpg", pdf: "assets/awards/asme-dfmlc-2026-paper-of-distinction.pdf" },
     { year: "2025", title: "Biomed Journal Club Competition — Second Place", body: "Awarded second place in the Biomed Journal Club Competition at Texas Tech University." },
     { year: "2023", title: "Best Presentation Award — Third Place, BioMed Journal Club", body: "Awarded by the Edward E. Whitacre Jr. College of Engineering for the presentation 'Deep-learning-based Inverse Design of Three Dimensional Architected Cellular Materials with the Target Porosity and Stiffness using Voxelized Voronoi Lattices' at the 2023 Fall BioMed Journal Club, Texas Tech University.", image: "assets/awards/ttu-biomed-journal-club-2023.png" },
     { year: "2023 — Present", title: "Distinguished Graduate Student Assistantship (DGSA)", body: "Awarded by the Texas Tech University Graduate School and renewed for three consecutive years (2023–24, 2024–25, 2025–26).", images: [
@@ -279,8 +277,6 @@ window.PORTFOLIO = {
   contact: {
     website: { label: "akmahasunhabib.me", url: "https://akmahasunhabib.me", icon: "🌐", fa: "fa-solid fa-globe" },
     email: { label: "akhabib@ttu.edu", url: "mailto:akhabib@ttu.edu", icon: "✉", fa: "fa-solid fa-envelope" },
-    phone: { label: "(806) 730-8466", url: "tel:+18067308466", icon: "☎", fa: "fa-solid fa-phone" },
-    address: { label: "2717 3rd St #1007, Lubbock, TX 79415", url: "https://www.google.com/maps/place/2717+3rd+St,+Lubbock,+TX", icon: "🏠", fa: "fa-solid fa-house" },
     scholar: { label: "Google Scholar Profile", url: "https://scholar.google.com/citations?user=DzP9DoIAAAAJ&hl=en", icon: "🎓", fa: "fa-brands fa-google-scholar" },
     researchgate: { label: "ResearchGate Profile", url: "https://www.researchgate.net/profile/A-K-M-Ahasun-Habib-2", icon: "RG", fa: "fa-brands fa-researchgate" },
     linkedin: { label: "LinkedIn Profile", url: "https://www.linkedin.com/in/a-k-m-ahasun-habib-2868a3151/", icon: "in", fa: "fa-brands fa-linkedin-in" },

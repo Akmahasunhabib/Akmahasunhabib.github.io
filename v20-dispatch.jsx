@@ -175,7 +175,7 @@ function V20Portfolio({ theme = {} }) {
   );
 
   const Row = ({ left, title, org, children }) => (
-    <div style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: 22, padding: '10px 0', borderTop: `1px solid ${t.rule}` }}>
+    <div className="dsp-row" style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: 22, padding: '10px 0', borderTop: `1px solid ${t.rule}` }}>
       <div style={{ fontFamily: t.fontBody, fontSize: 14, color: t.accent, fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', paddingTop: 3 }}>{left}</div>
       <div>
         <div style={{ fontFamily: t.fontDisplay, fontSize: 19.5, fontWeight: 600, color: t.ink, lineHeight: 1.3, marginBottom: org ? 2 : 4 }}>{title}</div>
@@ -219,7 +219,7 @@ function V20Portfolio({ theme = {} }) {
         <H>Recent News</H>
         <div>
           {(onePage ? news.slice(0, 4) : (showAllNews ? news : news.slice(0, 6))).map((n, i) => (
-            <div key={i} style={{ display: 'grid', gridTemplateColumns: '110px 1fr', gap: 20, padding: '10px 0', borderTop: `1px solid ${t.rule}` }}>
+            <div key={i} className="dsp-newsrow" style={{ display: 'grid', gridTemplateColumns: '110px 1fr', gap: 20, padding: '10px 0', borderTop: `1px solid ${t.rule}` }}>
               <div style={{ fontFamily: t.fontBody, fontSize: 15, color: t.muted, paddingTop: 2 }}>{n.date}</div>
               <div>
                 <span style={{ fontFamily: t.fontBody, fontSize: 11.5, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: t.accentInk, background: t.accent, padding: '3px 7px', marginRight: 9 }}>{n.kind}</span>
@@ -320,7 +320,7 @@ function V20Portfolio({ theme = {} }) {
                   <div style={{ display: 'flex', gap: 7, padding: '12px 26px 0', flexWrap: 'wrap', background: t.panel }}>
                     {figs.map((f, k) => (
                       <button key={k} type="button" onClick={() => setFigState(s => ({ ...s, [i]: k }))} aria-label={f.caption} style={{ width: 56, height: 42, padding: 0, border: k === figIdx ? `2px solid ${t.accent}` : `1px solid ${t.rule}`, background: '#fff', cursor: 'pointer', overflow: 'hidden', opacity: k === figIdx ? 1 : 0.7 }}>
-                        <img src={f.src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                        <img src={f.src} alt="" onError={(e) => { e.currentTarget.parentNode.style.display = 'none'; }} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                       </button>
                     ))}
                   </div>
@@ -399,7 +399,7 @@ function V20Portfolio({ theme = {} }) {
               <div style={{ marginTop: 6 }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 18, alignItems: 'center' }}>
                   {a.image ? <button type="button" onClick={() => setLightbox({ src: a.image, caption: a.title })} className="dsp-certlink"><i className="fa-solid fa-award"></i>View certificate</button> : null}
-                  {a.pdf ? <a href={a.pdf} target="_blank" style={{ display: 'inline-flex', gap: 8, alignItems: 'center', fontFamily: t.fontBody, fontSize: 14.5, fontWeight: 600, color: t.accent, textDecoration: 'none' }}><i className="fa-solid fa-file-pdf"></i>Award letter (PDF)</a> : null}
+                  {a.pdf ? <a href={a.pdf} target="_blank" style={{ display: 'inline-flex', gap: 8, alignItems: 'center', fontFamily: t.fontBody, fontSize: 14.5, fontWeight: 600, color: t.accent, textDecoration: 'none' }}><i className="fa-solid fa-file-pdf"></i>Conference program (PDF)</a> : null}
                 </div>
               </div>
             ) : null}
@@ -471,9 +471,8 @@ function V20Portfolio({ theme = {} }) {
                 <div style={{ fontFamily: t.fontBody, fontSize: 16, color: t.ink, lineHeight: 1.55 }}>Department of Mechanical &amp; Aerospace Engineering<br />Texas Tech University<br />Lubbock, Texas, USA</div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 14 }}>
                   <a href={P.contact.affiliation.url} target="_blank" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontFamily: t.fontBody, fontSize: 14, fontWeight: 600, border: `1px solid ${t.rule}`, padding: '6px 11px', background: t.paper }}><i className="fa-solid fa-building-columns"></i>Department</a>
-                  <a href={P.contact.address.url} target="_blank" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontFamily: t.fontBody, fontSize: 14, fontWeight: 600, border: `1px solid ${t.rule}`, padding: '6px 11px', background: t.paper }}><i className="fa-solid fa-location-dot" style={{ color: '#ea4335' }}></i>Map</a>
+                  <a href={P.contact.location.url} target="_blank" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontFamily: t.fontBody, fontSize: 14, fontWeight: 600, border: `1px solid ${t.rule}`, padding: '6px 11px', background: t.paper }}><i className="fa-solid fa-location-dot" style={{ color: '#ea4335' }}></i>Map</a>
                 </div>
-                <div style={{ fontFamily: t.fontBody, fontSize: 14, color: t.muted, marginTop: 12, lineHeight: 1.5 }}>Mailing: {P.contact.address.label}</div>
               </div>
             </div>
           </div>
@@ -506,12 +505,21 @@ function V20Portfolio({ theme = {} }) {
         .dsp-certlink:hover{text-decoration:underline}
         .dsp-certrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 20px;align-items:baseline;padding:9px 0}
         @media (prefers-reduced-motion:reduce){.dsp-rev{opacity:1;transform:none;transition:none}}
+        @media (max-width:860px){
+          .dsp-hdr{height:auto !important;padding:10px 16px !important;flex-direction:column;align-items:flex-start !important;gap:6px !important}
+          .dsp-navlinks{justify-content:flex-start !important}
+          .dsp-grid{grid-template-columns:minmax(0,1fr) !important;gap:26px !important;padding:22px 16px 56px !important}
+          .dsp-aside{position:static !important}
+          .dsp-row,.dsp-newsrow{grid-template-columns:minmax(0,1fr) !important;gap:2px !important}
+          .dsp-open-h{font-size:30px}
+          .dsp-open-t{padding:14px 18px}
+        }
       `}</style>
 
       <header className="dsp-nav" style={{ background: t.navBg, flexShrink: 0 }}>
-        <div style={{ maxWidth: 1220, margin: '0 auto', padding: '0 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, height: 62 }}>
+        <div className="dsp-hdr" style={{ maxWidth: 1220, margin: '0 auto', padding: '0 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, height: 62 }}>
           <a href="#" onClick={(e) => { e.preventDefault(); go('home'); }} style={{ fontFamily: t.fontDisplay, fontSize: 20, fontWeight: 600, color: t.navInk, textDecoration: 'none', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>{P.name}</a>
-          <nav style={{ display: 'flex', gap: 4, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+          <nav className="dsp-navlinks" style={{ display: 'flex', gap: 4, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
             {DISPATCH_PAGES.map(pg => (
               <button key={pg.id} onClick={() => go(pg.id)} style={{
                 fontFamily: t.fontBody, fontSize: 15, cursor: 'pointer', border: 'none', background: page === pg.id ? t.accent : 'transparent',
@@ -524,9 +532,9 @@ function V20Portfolio({ theme = {} }) {
       </header>
 
       <div ref={scrollRef} className="dsp dsp-scroll" style={{ flex: 1, overflowY: 'auto' }}>
-        <div style={{ maxWidth: 1220, margin: '0 auto', padding: '38px 32px 70px', display: 'grid', gridTemplateColumns: '272px 1fr', gap: 46, alignItems: 'start' }}>
+        <div className="dsp-grid" style={{ maxWidth: 1220, margin: '0 auto', padding: '38px 32px 70px', display: 'grid', gridTemplateColumns: '272px 1fr', gap: 46, alignItems: 'start' }}>
 
-          <aside style={{ position: 'sticky', top: 0, background: t.sidebarBg, border: `1px solid ${t.rule}`, padding: 22, textAlign: 'center' }}>
+          <aside className="dsp-aside" style={{ position: 'sticky', top: 0, background: t.sidebarBg, border: `1px solid ${t.rule}`, padding: 22, textAlign: 'center' }}>
             <img src="assets/portrait.png" alt={P.name} style={{ width: 152, height: 152, objectFit: 'cover', borderRadius: '50%', border: `4px solid ${t.paper}`, boxShadow: `0 3px 14px rgba(0,0,0,0.13)`, filter: t.portraitFilter, display: 'block', margin: '0 auto 16px' }} />
             <div style={{ fontFamily: t.fontDisplay, fontSize: 21, fontWeight: 600, color: t.ink, lineHeight: 1.25, marginBottom: 8 }}>{P.name}</div>
             <div style={{ fontFamily: t.fontBody, fontSize: 15, color: t.muted, lineHeight: 1.55, marginBottom: 12 }}>
