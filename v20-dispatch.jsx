@@ -399,7 +399,7 @@ function V20Portfolio({ theme = {} }) {
               <div style={{ marginTop: 6 }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 18, alignItems: 'center' }}>
                   {a.image ? <button type="button" onClick={() => setLightbox({ src: a.image, caption: a.title })} className="dsp-certlink"><i className="fa-solid fa-award"></i>View certificate</button> : null}
-                  {a.pdf ? <a href={a.pdf} target="_blank" style={{ display: 'inline-flex', gap: 8, alignItems: 'center', fontFamily: t.fontBody, fontSize: 14.5, fontWeight: 600, color: t.accent, textDecoration: 'none' }}><i className="fa-solid fa-file-pdf"></i>Award letter (PDF)</a> : null}
+                  {a.pdf ? <a href={a.pdf} target="_blank" style={{ display: 'inline-flex', gap: 8, alignItems: 'center', fontFamily: t.fontBody, fontSize: 14.5, fontWeight: 600, color: t.accent, textDecoration: 'none' }}><i className="fa-solid fa-file-pdf"></i>Conference program (PDF)</a> : null}
                 </div>
               </div>
             ) : null}
@@ -471,9 +471,8 @@ function V20Portfolio({ theme = {} }) {
                 <div style={{ fontFamily: t.fontBody, fontSize: 16, color: t.ink, lineHeight: 1.55 }}>Department of Mechanical &amp; Aerospace Engineering<br />Texas Tech University<br />Lubbock, Texas, USA</div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 14 }}>
                   <a href={P.contact.affiliation.url} target="_blank" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontFamily: t.fontBody, fontSize: 14, fontWeight: 600, border: `1px solid ${t.rule}`, padding: '6px 11px', background: t.paper }}><i className="fa-solid fa-building-columns"></i>Department</a>
-                  <a href={P.contact.address.url} target="_blank" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontFamily: t.fontBody, fontSize: 14, fontWeight: 600, border: `1px solid ${t.rule}`, padding: '6px 11px', background: t.paper }}><i className="fa-solid fa-location-dot" style={{ color: '#ea4335' }}></i>Map</a>
+                  <a href={P.contact.location.url} target="_blank" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontFamily: t.fontBody, fontSize: 14, fontWeight: 600, border: `1px solid ${t.rule}`, padding: '6px 11px', background: t.paper }}><i className="fa-solid fa-location-dot" style={{ color: '#ea4335' }}></i>Map</a>
                 </div>
-                <div style={{ fontFamily: t.fontBody, fontSize: 14, color: t.muted, marginTop: 12, lineHeight: 1.5 }}>Mailing: {P.contact.address.label}</div>
               </div>
             </div>
           </div>
